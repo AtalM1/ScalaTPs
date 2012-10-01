@@ -5,6 +5,7 @@ Subject was:
 
  - Write a function taking a string as parameter and returning a mutable
  map containing the index of all the chars. ex:
+
         "nantes" => 'n' -> {0, 2}
                     'a' -> {1}
                     't' -> {3}
