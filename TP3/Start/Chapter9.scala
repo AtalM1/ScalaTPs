@@ -2,21 +2,25 @@ object Chapter9 {
   def main(args: Array[String]) {
     val l = List(2, 8, 1, 9, 3, 7)
     println("Here is the l list we'll use to test our functions")
-    println(l)
+    println("  " + l)
     println
     println("9.1.1: insert without pattern matching on l")
-    println(isort(l))
+    println("  " + isort(l))
     println
     println("9.2.1: a tail recursive version of length used on l")
-    println(tailRecLength(l))
+    println("  " + tailRecLength(l))
     println
     println("9.4.1: squareList defined in two different ways used on l")
-    println(squareList1(l))
-    println(squareList2(l))
+    println("  " + squareList1(l))
+    println("  " + squareList2(l))
+    println
+    println("9.4.2: complexity differences")
+    println("  Asymptotic complexity would be linear for the first definition" +
+      " and quadratic for the second")
     println
     println("9.4.3: mapFun of squares and lengthFun on l")
-    println(mapFun(l, (x: Int) => x * x))
-    println(lengthFun(l))
+    println("  " + mapFun(l, (x: Int) => x * x))
+    println("  " + lengthFun(l))
   }
   
   def isort(xs: List[Int]): List[Int] =
@@ -52,12 +56,6 @@ object Chapter9 {
   def squareList2(xs: List[Int]): List[Int] =
     xs map (x => x * x)
 
-  /*
-   * Exercise 9.4.2
-   * Asymptotic complexity would be linear for the first definition
-   * and quadratic for the second :(
-   */
-   
   def mapFun[A, B](xs: List[A], f: A => B): List[B] =
     (xs :\ List[B]()){ (x: A, ys: List[B]) => f(x) :: ys }
 
