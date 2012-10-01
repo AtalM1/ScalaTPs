@@ -1,5 +1,9 @@
-import scala.collection.mutable.{Map => MMap, Set => MSet}
-import scala.collection.immutable.{Map => IMap, Set => ISet}
+import scala.collection.immutable.{ Map => IMap
+                                  , Set => ISet }
+
+import scala.collection.mutable.{ Map => MMap
+                                , Set => MSet
+                                , LinkedList => MLinkedList }
 
 object TP3 {
   def main(args: Array[String]) {
@@ -9,6 +13,9 @@ object TP3 {
     println("Question 2:")
     println(toMap2("nantes") mkString "\n")
     println
+    val mll = MLinkedList(0, 0, 1, 0, 2, 3, 0, 0, 5, 0, 0)
+    filterZeros(mll)
+    println(mll)
   }
   
   def toMap1(string: String): MMap[Char, MSet[Int]] = {
@@ -41,6 +48,22 @@ object TP3 {
           index + 1)
     }
     worker(string, IMap[Char, ISet[Int]](), 0)
+  }
+  
+  def filterZeros(l: MLinkedList[Int]) {
+    if(!l.isEmpty) {
+      if(l.elem == 0) {
+        if(l.next.isEmpty)
+          l.next = l
+        else {
+          l.elem = l.next.elem
+          l.next = l.next.next
+        }
+        filterZeros(l)
+      } else {
+        filterZeros(l.next)
+      }
+    } 
   }
 }
 
