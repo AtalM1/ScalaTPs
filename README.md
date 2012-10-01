@@ -1,4 +1,4 @@
 ScalaTPs
 ========
 
-Various TPs done at Nante University's ATAL M1
+Various TPs of the Génie Logiciel course.

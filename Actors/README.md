@@ -1,7 +1,7 @@
 Actors
 ======
 
-TP about actors in scala. Useless stuff.
+TP about actors in scala.
 
 Tutorial used is located here: http://www.scala-lang.org/node/242
 
